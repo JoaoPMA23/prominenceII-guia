@@ -137,7 +137,7 @@ nav a {
   text-transform: uppercase;
   color: var(--muted);
   text-decoration: none;
-  transition: color .2s;
+  transition: opacity .3s ease, color .3s ease, text-shadow .3s ease;
   white-space: nowrap;
 }
 nav a:hover { color: var(--gold); }
@@ -455,4 +455,21 @@ footer {
 @media (max-width: 600px) {
   .prog-row { grid-template-columns: 90px 1fr auto; }
   nav { gap: .5rem 1rem; }
+}
+
+/* ── SPA PAGE TRANSITIONS ── */
+#content-area {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+#content-area.fade-out {
+  opacity: 0;
+}
+
+/* Active navigation link styling */
+nav a.active {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 15px rgba(201, 168, 76, 0.8);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
 }

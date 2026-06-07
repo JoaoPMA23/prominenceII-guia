@@ -9,6 +9,35 @@
 </head>
 <body>
 
+<!-- NAV -->
+<nav>
+  <a href="#inicio">Início</a>
+  <span class="nav-dot">◆</span>
+  <a href="#qol">Interface (QoL)</a>
+  <span class="nav-dot">◆</span>
+  <a href="#sobrevivencia">Sobrevivência</a>
+  <span class="nav-dot">◆</span>
+  <a href="#combate">Combate</a>
+  <span class="nav-dot">◆</span>
+  <a href="#talentos">Talentos</a>
+  <span class="nav-dot">◆</span>
+  <a href="#classes">Classes</a>
+  <span class="nav-dot">◆</span>
+  <a href="#equipamentos">Equipamentos</a>
+  <span class="nav-dot">◆</span>
+  <a href="#masmorras">Masmorras</a>
+  <span class="nav-dot">◆</span>
+  <a href="#chefe">Chefes Cap. 1</a>
+  <span class="nav-dot">◆</span>
+  <a href="#endremastered">End Remastered</a>
+  <span class="nav-dot">◆</span>
+  <a href="#adastra">Ad Astra</a>
+  <span class="nav-dot">◆</span>
+  <a href="#hastur">Era Hasturiana</a>
+  <span class="nav-dot">◆</span>
+  <a href="#wikis">Wikis & Links</a>
+</nav>
+
 <!-- HERO -->
 <header>
   <div class="stars"></div>
@@ -19,545 +48,1030 @@
   <p class="scroll-cta">↓ &nbsp; Role para começar &nbsp; ↓</p>
 </header>
 
-<!-- NAV -->
-<nav>
-  <a href="#inicio">Início</a>
-  <span class="nav-dot">◆</span>
-  <a href="#qol">Interface (QoL)</a>
-  <span class="nav-dot">◆</span>
-  <a href="#sobrevivencia">Sobrevivência</a>
-  <span class="nav-dot">◆</span>
-  <a href="#talentos">Talentos</a>
-  <span class="nav-dot">◆</span>
-  <a href="#classes">Classes</a>
-  <span class="nav-dot">◆</span>
-  <a href="#equipamentos">Equipamentos</a>
-  <span class="nav-dot">◆</span>
-  <a href="#masmorras">Masmorras</a>
-  <span class="nav-dot">◆</span>
-  <a href="#chefe">1º Chefe</a>
-  <span class="nav-dot">◆</span>
-  <a href="#wikis">Wikis & Links</a>
-</nav>
-
 <main>
+  <!-- O roteador SPA irá carregar as seções dinamicamente aqui -->
+  <div id="content-area"></div>
+  <div id="scroll-sentinel" style="height: 20px;"></div>
+</main>
 
-  <!-- ── 1. PRIMEIROS PASSOS ── -->
-  <section class="section" id="inicio">
-    <p class="section-label">Capítulo I</p>
-    <h2 class="section-title">Primeiros Passos</h2>
 
-    <p>Ao entrar no mundo pela primeira vez, o pack pode parecer avassalador. Respira fundo — a progressão é guiada pelo <strong>Quest Book</strong> (Livro de Missões). Abra-o, leia o capítulo <em>Void's Invasion</em> e marque o "check" de entendimento para desbloquear os próximos capítulos.</p>
+  <template id="page-adastra">
+    <section class="section" id="adastra">
+      <p class="section-label">Capítulo VIII</p>
+      <h2 class="section-title">Exploração Espacial (Ad Astra)</h2>
 
-    <div class="tip"><strong>📖 Quest Book é seu GPS.</strong> Não ignore as missões — elas ensinam mecânicas E dão recompensas valiosas.</div>
+      <p>A exploração espacial no modpack <strong>Ad Astra</strong> é um conteúdo de <em>mid/late game</em>. Ela permite que você construa foguetes, vista trajes espaciais e viaje para outros planetas e sistemas solares em busca de minérios avançados essenciais para as receitas de fim de jogo.</p>
 
-    <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Ajustes Recomendados Logo de Início</h3>
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Tiers de Foguetes e Destinos</h3>
+      <p>A progressão espacial é dividida em 4 tiers de foguetes, cada um construído com materiais do destino anterior:</p>
 
-    <div class="card-grid">
-      <div class="card" style="--accent:var(--gold)">
-        <div class="card-icon">🎨</div>
-        <div class="card-title">Texturas Ashen</div>
-        <div class="card-body">O pack vem com o <em>Ashen Texture Pack</em> que muda a aparência dos itens. Para o visual clássico do Minecraft, vá em <strong>Resource Packs</strong> e desative tudo que tiver "Ashen" no nome.</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>Material Principal</th>
+              <th>Destino</th>
+              <th>O que encontrar / Recursos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Tier 1</strong></td>
+              <td>Aço (Steel)</td>
+              <td>Lua (Moon)</td>
+              <td>Minério de <strong>Desh</strong> e Lunarian Traders (comerciantes locais).</td>
+            </tr>
+            <tr>
+              <td><strong>Tier 2</strong></td>
+              <td>Desh</td>
+              <td>Marte (Mars)</td>
+              <td>Martian Raptors, novos minérios e materiais avançados.</td>
+            </tr>
+            <tr>
+              <td><strong>Tier 3</strong></td>
+              <td>Ostrum</td>
+              <td>Vênus / Mercúrio</td>
+              <td>Ambiente com chuva ácida e temperaturas extremas. Exige blindagens adicionais.</td>
+            </tr>
+            <tr>
+              <td><strong>Tier 4</strong></td>
+              <td>Calorite</td>
+              <td>Glacio (Proxima Centauri)</td>
+              <td>Planeta gelado contendo o chefe <strong>The Fallen Icon</strong> e micro-atmosfera respirável.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="card" style="--accent:var(--ice)">
-        <div class="card-icon">🗺️</div>
-        <div class="card-title">Proteger seu Território</div>
-        <div class="card-body">Pressione <kbd>M</kbd> para abrir o mapa. Clique com o botão direito, arraste para selecionar sua área e clique em <strong>"Claim Selected"</strong>. Isso impede Creepers e outros jogadores de mexerem nas suas coisas.</div>
-      </div>
-      <div class="card" style="--accent:var(--void2)">
-        <div class="card-icon">👥</div>
-        <div class="card-title">Jogar em Grupo</div>
-        <div class="card-body">
-          Para criar um grupo e habilitar PvP amigável:<br>
-          <code style="font-size:.8rem;color:var(--ice)">/openpac-parties create</code><br>
-          <code style="font-size:.8rem;color:var(--ice)">/openpac-parties member invite Nome</code><br>
-          <code style="font-size:.8rem;color:var(--ice)">/openpac-pvp</code> (ambos precisam ativar)
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:2rem 0 .75rem;text-transform:uppercase;">Preparação Espacial & Sobrevivência</h3>
+      
+      <div class="card-grid">
+        <div class="card" style="--accent:var(--red)">
+          <div class="card-icon">👨‍🚀</div>
+          <div class="card-title">Netherite Space Suit</div>
+          <div class="card-body">
+            Para sobreviver sem oxigênio e às temperaturas do espaço, você <strong>precisará fabricar o Netherite Space Suit</strong>. Não viaje sem encher seus tanques de oxigênio!
+          </div>
+        </div>
+        <div class="card" style="--accent:var(--ice)">
+          <div class="card-icon">❄️</div>
+          <div class="card-title">Atmosfera de Glacio</div>
+          <div class="card-body">
+            <strong>Glacio</strong> é o único destino onde é possível remover o capacete em certas áreas protegidas e respirar de forma natural, apesar do frio extremo.
+          </div>
+        </div>
+        <div class="card" style="--accent:var(--void2)">
+          <div class="card-icon">👹</div>
+          <div class="card-title">The Fallen Icon</div>
+          <div class="card-body">
+            O terrível chefe <strong>The Fallen Icon</strong> habita as profundezas do planeta Glacio. Prepare-se para uma das lutas mais complexas do late game.
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Progressão de Níveis — Visão Geral</h3>
+  </template>
+  <template id="page-chefe">
+    <section class="section" id="chefe">
+      <p class="section-label">Capítulo VII</p>
+      <h2 class="section-title">Chefes do Capítulo 1 (Void's Invasion)</h2>
 
-    <div class="prog-bar">
-      <div class="prog-row">
-        <span class="prog-label">Níveis 1 – 10</span>
-        <div class="prog-track"><div class="prog-fill" style="--w:.15"></div></div>
-        <span class="prog-val">Disponível</span>
+      <p>A progressão no Capítulo 1 exige a derrota de 5 chefes obrigatórios. Ao atingir o nível 10, sua progressão de talentos será <strong>bloqueada</strong> até você derrotar o primeiro grande chefe: o <strong>Night Lich</strong>. Após derrotá-lo, o limite de nível de talento é expandido para 50, abrindo o caminho para os outros chefes necessários para fechar o capítulo.</p>
+
+      <!-- NIGHT LICH -->
+      <div class="boss-block">
+        <div class="boss-name">☽ Night Lich</div>
+        <p>Um chefe voador e de ataque à distância que habita uma torre sombria. Recomendado ter pelo menos <strong>armadura de ferro ou aço</strong>, <strong>arco com flechas</strong> e alguns <strong>Health Flasks</strong> das Mine Cells.</p>
+
+        <h3 style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.08em;color:var(--void2);margin:1.5rem 0 .75rem;text-transform:uppercase;">Como Encontrar e Invocar</h3>
+
+        <ol class="steps">
+          <li>
+            <span class="step-num"></span>
+            <div class="step-content">
+              <div class="step-title">Coletar 4 Soul Stars</div>
+              <p>Mate monstros mortos-vivos (zumbis e esqueletos). Cada um tem ~2-3% de chance de soltar uma <strong>Soul Star</strong>. Você precisa de 4.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num"></span>
+            <div class="step-content">
+              <div class="step-title">Localizar a Torre</div>
+              <p>Arremesse as Soul Stars (como se fossem Pérolas do Ender). Elas vão indicar a <strong>direção da Lich Tower</strong>. Siga até encontrar a torre.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num"></span>
+            <div class="step-content">
+              <div class="step-title">Suba ao Topo</div>
+              <p>Escale a torre, evitando armadilhas e inimigos no caminho. Leve comida suficiente.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num"></span>
+            <div class="step-content">
+              <div class="step-title">Invocar o Night Lich</div>
+              <p>No topo, coloque as <strong>4 Soul Stars nos quatro altares</strong>. O chefe será invocado imediatamente.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num"></span>
+            <div class="step-content">
+              <div class="step-title">A Batalha</div>
+              <p>Ele voa e ataca à distância. <strong>Use arco ou magia</strong> — mesmo guerreiros devem ter um arco para este encontro. Fique em movimento, use os Health Flasks e seja persistente.</p>
+            </div>
+          </li>
+        </ol>
       </div>
-      <div class="prog-row">
-        <span class="prog-label">Níveis 11 – 50</span>
-        <div class="prog-track"><div class="prog-fill" style="--w:.62"></div></div>
-        <span class="prog-val">Após Night Lich</span>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:2.5rem 0 .75rem;text-transform:uppercase;">Outros Chefes Obrigatórios do Capítulo 1</h3>
+      <p>Após derrotar o Night Lich, você precisará encontrar e derrotar estes 4 chefes adicionais para fechar o capítulo e desbloquear os seguintes da invasão do Vazio:</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Chefe</th>
+              <th>Localização</th>
+              <th>Descrição & Observações de Combate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nether Gauntlet</strong> 🥊</td>
+              <td>Dimensão: <strong>Nether</strong></td>
+              <td>Sentinela de fogo flutuante. Causa dano de fogo constante; é altamente recomendável levar poções de resistência a fogo.</td>
+            </tr>
+            <tr>
+              <td><strong>Blackstone Golem</strong> 🪨</td>
+              <td>Dimensão: <strong>Nether</strong></td>
+              <td>Guerreiro de pedra massivo. Causa dano físico extremo a curta distância. Mantenha distância e utilize ataques de longo alcance.</td>
+            </tr>
+            <tr>
+              <td><strong>The Obsidilith</strong> 🌀</td>
+              <td>Dimensão: <strong>Underworld</strong></td>
+              <td>Entidade de obsidiana de fase avançada. Seus golpes causam quebra de postura. Prepare uma armadura robusta e devidamente reforjada (reforge gear) antes de enfrentá-lo.</td>
+            </tr>
+            <tr>
+              <td><strong>The Eye</strong> 👁️</td>
+              <td><strong>Dimensão Especial do Vazio</strong></td>
+              <td>O chefe final que encerra a <em>Invasão do Vazio</em> no Capítulo 1. Uma luta complexa com várias fases e projéteis teleguiados.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="prog-row">
-        <span class="prog-label">Níveis 51 – 65</span>
-        <div class="prog-track"><div class="prog-fill" style="--w:1"></div></div>
-        <span class="prog-val">Era Hasturiana</span>
-      </div>
-    </div>
-  </section>
 
-  <hr class="divider">
+      <div class="tip"><strong>🏆 Conclusão do Capítulo 1:</strong> Ao derrotar <strong>The Eye</strong>, a invasão do Vazio no capítulo 1 é totalmente vencida, liberando novos limites de nível e abrindo os capítulos de late game no Quest Book!</div>
+    </section>
 
-  <!-- ── 1.5 FERRAMENTAS DE INTERFACE (QOL) ── -->
-  <section class="section" id="qol">
-    <p class="section-label">Capítulo I.V</p>
-    <h2 class="section-title">Ferramentas de Interface (QoL)</h2>
+  </template>
+  <template id="page-classes">
+    <section class="section" id="classes">
+      <p class="section-label">Capítulo IV</p>
+      <h2 class="section-title">Classes e Arquétipos</h2>
 
-    <p>Para facilitar a sua jornada no Prominence II, existem algumas ferramentas essenciais que ajudam na navegação e na consulta de receitas. Elas substituem completamente as mecânicas tradicionais do Minecraft vanilla.</p>
+      <p>Não existe uma classe "errada" — cada uma tem seu estilo de jogo. Escolha de acordo com como você prefere jogar.</p>
 
-    <div class="card-grid">
-      <div class="card" style="--accent:var(--gold)">
-        <div class="card-icon">🔍</div>
-        <div class="card-title">REI (Roughly Enough Items)</div>
-        <div class="card-body">
-          Pressione <kbd>R</kbd> sobre qualquer item para ver sua receita de fabricação ou <kbd>U</kbd> para ver todos os seus usos. Substitui completamente o livro de receitas vanilla.
+      <div class="class-grid">
+        <div class="class-card" style="--accent:var(--red)">
+          <div class="class-emoji">⚔️</div>
+          <div class="class-name">Warrior</div>
+          <div class="class-desc">Alto dano físico corpo a corpo. Mais fácil de aprender. Ótimo para iniciantes.</div>
+        </div>
+        <div class="class-card" style="--accent:#7a7870">
+          <div class="class-emoji">🛡️</div>
+          <div class="class-name">Protector</div>
+          <div class="class-desc">Tanque do grupo. Alta vida e armadura. Perfeito para multiplayer.</div>
+        </div>
+        <div class="class-card" style="--accent:var(--green)">
+          <div class="class-emoji">🏹</div>
+          <div class="class-name">Ranger</div>
+          <div class="class-desc">Dano à distância com arcos. Seguro contra chefes voadores. Recomendado para o Night Lich.</div>
+        </div>
+        <div class="class-card" style="--accent:var(--gold)">
+          <div class="class-emoji">🗡️</div>
+          <div class="class-name">Rogue</div>
+          <div class="class-desc">Ataques ultra-rápidos em dual wielding. Bônus de 20%+ de velocidade de movimento.</div>
+        </div>
+        <div class="class-card" style="--accent:var(--void2)">
+          <div class="class-emoji">🔮</div>
+          <div class="class-name">Mage</div>
+          <div class="class-desc">Arcano, Fogo ou Gelo. Alta exigência de skill. Dano devastador com runas e cajados.</div>
+        </div>
+        <div class="class-card" style="--accent:var(--ice)">
+          <div class="class-emoji">💚</div>
+          <div class="class-name">Healer</div>
+          <div class="class-desc">Especialista em cura. Vital em servidores. Muito mais útil em grupo do que solo.</div>
+        </div>
+        <div class="class-card" style="--accent:#d4a0ff">
+          <div class="class-emoji">🎵</div>
+          <div class="class-name">Bard</div>
+          <div class="class-desc">Suporte que dá buffs de dano e velocidade para o grupo. Excelente em multiplayer.</div>
         </div>
       </div>
-      <div class="card" style="--accent:var(--ice)">
-        <div class="card-icon">🗺️</div>
-        <div class="card-title">Xaero's Minimap</div>
-        <div class="card-body">
-          Mostra um mini mapa no canto da tela com inimigos, jogadores e estruturas próximas. Configurável e expansível pressionando a tecla <kbd>Y</kbd>.
+
+      <div class="tip" style="margin-top:1.75rem"><strong>🎯 Recomendação para iniciantes:</strong> Comece como <strong>Warrior</strong> ou <strong>Ranger</strong>. São os mais intuitivos e funcionam bem mesmo sem dominar todos os sistemas.</div>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Habilidades Ativas com Spellbinding</h3>
+      <p>A <strong>Spellbinding Table</strong> (rodeada por estantes) permite criar livros de habilidade para sua classe. Coloque um livro normal + lapis-lazúli para criar manuais como o <em>Rogue Handbook</em> ou <em>Archery Manual</em>. Equipe o livro no slot de <strong>Trinkets</strong> para desbloquear habilidades ativas acionáveis por teclas.</p>
+    </section>
+
+  </template>
+  <template id="page-combate">
+    <section class="section" id="combate">
+      <p class="section-label">Capítulo II.V</p>
+      <h2 class="section-title">Sistema de Combate (Better Combat & Simply Swords)</h2>
+
+      <p>O Prominence II altera radicalmente o combate padrão do Minecraft vanilla. Com o mod <strong>Better Combat</strong>, os combates são mais dinâmicos, rítmicos e exigem posicionamento preciso, lembrando mecânicas de jogos <em>Soulslike</em>.</p>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Mecânicas do Better Combat</h3>
+      <div class="card-grid">
+        <div class="card" style="--accent:var(--red)">
+          <div class="card-icon">⚔️</div>
+          <div class="card-title">Hitbox Física Real</div>
+          <div class="card-body">
+            Suas armas agora têm volume físico real durante a animação de ataque. O dano é aplicado a todos os inimigos atingidos pela trajetória do golpe — não basta apenas apontar o cursor.
+          </div>
+        </div>
+        <div class="card" style="--accent:var(--gold)">
+          <div class="card-icon">⏱️</div>
+          <div class="card-title">Timing Rítmico</div>
+          <div class="card-body">
+            Existe um tempo de preparação (upswing) e recuperação de postura. Atacar freneticamente sem ritmo fará você errar golpes. O combate recompensa paciência e precisão.
+          </div>
         </div>
       </div>
-      <div class="card" style="--accent:var(--green)">
-        <div class="card-icon">🧭</div>
-        <div class="card-title">Nature's Compass</div>
-        <div class="card-body">
-          Uma bússola especial que permite buscar e apontar para qualquer bioma existente no mundo, poupando horas de exploração cega.
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Novos Tipos de Armas (Simply Swords)</h3>
+      <p>Diversos novos tipos de armas estão à sua disposição, cada uma com um estilo de jogo único e atributos de velocidade e alcance diferentes:</p>
+      
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Arma</th>
+              <th>Estilo de Uso / Vantagem</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Lança (Spear)</strong></td>
+              <td>Longo alcance, permitindo manter distância segura dos inimigos.</td>
+            </tr>
+            <tr>
+              <td><strong>Glaive</strong></td>
+              <td>Excelente controle de área, ideal para combater grandes grupos de monstros.</td>
+            </tr>
+            <tr>
+              <td><strong>Chakram</strong></td>
+              <td>Arma arremessável, oferecendo uma opção de dano físico a distância.</td>
+            </tr>
+            <tr>
+              <td><strong>Katana</strong></td>
+              <td>Altíssima velocidade de ataque, escalando perfeitamente com builds baseadas em <em>Haste</em>.</td>
+            </tr>
+            <tr>
+              <td><strong>Rapier</strong></td>
+              <td>Perfuração extremamente rápida, ignorando parte da armadura dos oponentes.</td>
+            </tr>
+            <tr>
+              <td><strong>Greathammer</strong></td>
+              <td>Dano massivo e lento, excelente para quebrar defesas e bloqueios inimigos.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Armas Lendárias & Evolução</h3>
+      <p>As armas lendárias mais poderosas do modpack possuem linhas evolutivas. Ao derrotar chefes como o <em>Ender Dragon</em> ou o <em>Wither</em>, ou ao usar <strong>Contained Remnants</strong>, você pode despertá-las:</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Linha Evolutiva</th>
+              <th>Estágio 1</th>
+              <th>Estágio 2</th>
+              <th>Estágio Final</th>
+              <th>Especialidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Lichblade</strong></td>
+              <td>Slumbering</td>
+              <td>Waking</td>
+              <td><strong style="color:var(--void2)">Awakened Lichblade</strong></td>
+              <td>Roubo de vida (lifesteal) e magia sombria.</td>
+            </tr>
+            <tr>
+              <td><strong>Relic Solar</strong></td>
+              <td>Dormant Relic</td>
+              <td>Righteous Relic</td>
+              <td><strong style="color:var(--gold)">Sunfire</strong></td>
+              <td>Dano em área e bônus massivo contra mortos-vivos.</td>
+            </tr>
+            <tr>
+              <td><strong>Relic do Vazio</strong></td>
+              <td>Dormant Relic</td>
+              <td>Tainted Relic</td>
+              <td><strong style="color:var(--ice)">Harbinger</strong></td>
+              <td>Foco em dano extremo contra alvo único.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="warn">
+        <strong>⚠️ Decisão Irreversível:</strong> A escolha de evolução de uma relíquia adormecida (Dormant Relic) para o caminho <strong>Solar (Sunfire)</strong> ou do <strong>Vazio (Harbinger)</strong> é <strong>definitiva e permanente</strong>. Escolha com sabedoria de acordo com a build da sua classe.
+      </div>
+    </section>
+
+  </template>
+  <template id="page-endremastered">
+    <section class="section" id="endremastered">
+      <p class="section-label">Capítulo VII.V</p>
+      <h2 class="section-title">End Remastered — Os 12 Olhos</h2>
+
+      <p>Para alcançar a dimensão do <strong>The End</strong> e enfrentar o Ender Dragon, a mecânica clássica de usar Olhos de Ender comuns foi completamente desativada. Agora, você deve localizar e coletar <strong>12 olhos únicos</strong> diferentes dentre um total de 16 possíveis espalhados pelo mundo.</p>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Localização dos Olhos Customizados</h3>
+      <p>Aqui está a lista completa de onde encontrar ou como fabricar cada um dos olhos necessários:</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Olho</th>
+              <th>Onde encontrar / Como obter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Old Eye</strong> 👁️</td>
+              <td>Encontrado em baús dentro de <strong>Pirâmides do Deserto</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Nether Eye</strong> 🔥</td>
+              <td>Encontrado em baús nas <strong>Fortalezas do Nether</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Cold Eye</strong> ❄️</td>
+              <td>Escondido em baús dentro de <strong>Iglus</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Rogue Eye</strong> 🍃</td>
+              <td>Encontrado em baús nas <strong>Pirâmides da Selva</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Black Eye</strong> ☠️</td>
+              <td>Encontrado em baús de <strong>Tesouros Enterrados</strong> (mapas de naufrágios).</td>
+            </tr>
+            <tr>
+              <td><strong>Magical Eye</strong> ✨</td>
+              <td>Drop garantido ao derrotar um <strong>Evoker</strong> (Invocador) em Mansões ou Invasões.</td>
+            </tr>
+            <tr>
+              <td><strong>Lost Eye</strong> ⛏️</td>
+              <td>Encontrado em baús dentro de poços de minas abandonados (<strong>Mineshafts</strong>).</td>
+            </tr>
+            <tr>
+              <td><strong>Corrupted Eye</strong> 👿</td>
+              <td>Encontrado em baús dentro de <strong>Postos Avançados de Pillagers</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Wither Eye</strong> 💀</td>
+              <td>Drop obtido ao derrotar o chefe <strong>Wither</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Guardian Eye</strong> 🔱</td>
+              <td>Drop obtido ao derrotar o <strong>Elder Guardian</strong> em Monumentos Oceânicos.</td>
+            </tr>
+            <tr>
+              <td><strong>Witch Eye</strong> 🧙‍♀️</td>
+              <td>Fabricado combinando uma pupila de Bruxa com outros ingredientes mágicos.</td>
+            </tr>
+            <tr>
+              <td><strong>Cursed Eye</strong> ☄️</td>
+              <td>Encontrado em baús dentro de <strong>Bastiões</strong> no Nether.</td>
+            </tr>
+            <tr>
+              <td><strong>Exotic Eye</strong> 🐠</td>
+              <td>Fabricado a partir de itens aquáticos raros.</td>
+            </tr>
+            <tr>
+              <td><strong>Evil Eye</strong> 🪙</td>
+              <td>Comprado com um Aldeão <strong>Clérigo no nível Mestre</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Undead Eye</strong> ⚡</td>
+              <td>Fabricado com uma <em>Undead Soul</em> (obtida de cavalos esqueletos mortos por raios).</td>
+            </tr>
+            <tr>
+              <td><strong>Cryptic Eye</strong> 🔮</td>
+              <td>Uma pequena chance de ser obtido aleatoriamente ao encantar itens na mesa de encantamentos.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip">
+        <strong>🧭 Dica de Ouro:</strong> Muitas dessas estruturas são difíceis de encontrar explorando sem rumo. Fabrique e utilize o <strong>Explorer's Compass</strong> para rastrear e obter as coordenadas exatas de templos, pirâmides e fortalezas rapidamente.
+      </div>
+    </section>
+
+  </template>
+  <template id="page-equipamentos">
+    <section class="section" id="equipamentos">
+      <p class="section-label">Capítulo V</p>
+      <h2 class="section-title">Equipamentos, Reforja & Encantamentos</h2>
+
+      <p>Melhorar seus equipamentos é crucial no Prominence II. O modpack altera o sistema de raridades de itens, adiciona a reforja de atributos e expande a mesa de encantamentos até o nível 100 com o mod <strong>Zenith (Apotheosis)</strong>.</p>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Raridades de Itens</h3>
+      <p>Itens têm raridades que afetam muito seu desempenho. Da mais fraca à mais forte:</p>
+      <div style="margin:.75rem 0 1.25rem">
+        <span class="badge">Comum</span>
+        <span class="badge blue">Incomum</span>
+        <span class="badge blue">Raro</span>
+        <span class="badge purple">Épico</span>
+        <span class="badge" style="background:rgba(240,208,128,.1);border-color:rgba(240,208,128,.4);color:var(--gold2)">Lendário</span>
+        <span class="badge red">Mítico</span>
+      </div>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Como Reforjar na Bigorna</h3>
+      <p>Na <strong>Bigorna (Anvil)</strong>, acesse a aba <em>Reforge Gear</em>. Você precisa do item com durabilidade cheia, mais o material base e o material de reforja específico:</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr><th>Material</th><th>Tier</th><th>Raridades possíveis</th><th>Onde encontrar</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Limestone Chunks</strong></td>
+              <td>1</td>
+              <td>Comum → Épico</td>
+              <td>Stonecutter com blocos de Limestone ou Diorite</td>
+            </tr>
+            <tr>
+              <td><strong>Pyrite</strong></td>
+              <td>2</td>
+              <td>Incomum → Lendário</td>
+              <td>Mineração no <strong>Nether</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Galena Ore</strong></td>
+              <td>3</td>
+              <td>Raro → Mítico</td>
+              <td>Mineração no <strong>End</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="warn"><strong>⚠️ Atenção:</strong> O Luck (Sorte) de seu personagem fornece uma influência direta no resultado da reforja. Se quiser atributos melhores, invista pontos em Luck na árvore de talentos antes de reforjar.</div>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:2.5rem 0 .75rem;text-transform:uppercase;">Encantamentos Avançados (Zenith / Apotheosis)</h3>
+      <p>A mesa de encantamentos padrão do Minecraft vanilla é limitada ao nível 30. Com o mod <strong>Zenith</strong>, você pode evoluí-la até o <strong>nível 100</strong>. Essa progressão é dividida em 3 fases de construção de estantes especiais:</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Fase</th>
+              <th>XP Mínimo</th>
+              <th>Estantes Utilizadas</th>
+              <th>Objetivo / Benefício</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Marítima</strong> 🌊</td>
+              <td>45</td>
+              <td>Infused Seashelf, Heart-Forged Seashelf, Crystalline Shellshelf</td>
+              <td>Estabelecer a base do sistema de alta potência.</td>
+            </tr>
+            <tr>
+              <td><strong>Abissal</strong> 🌋</td>
+              <td>60</td>
+              <td>Soul-Touched Shelves, Echoing Shelves, Sculkshelves</td>
+              <td>Amplificação caótica, aumentando a variabilidade e poder.</td>
+            </tr>
+            <tr>
+              <td><strong>Dracônica</strong> 🐉</td>
+              <td>80</td>
+              <td>End-Fused Rectification Shelf, Draconic Endshelf</td>
+              <td>Desbloqueio definitivo do nível 100 de encantamento.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:2rem 0 .75rem;text-transform:uppercase;">Infusões e Utilitários de Mesa</h3>
+      <p>Além de aumentar o nível máximo de encantamentos, a geometria das prateleiras e itens especiais de Zenith permitem criar utilitários únicos:</p>
+
+      <div class="card-grid">
+        <div class="card" style="--accent:var(--gold)">
+          <div class="card-icon">🧪</div>
+          <div class="card-title">Amuletos de Poção Inquebráveis</div>
+          <div class="card-body">
+            Infundir <em>Potion Charms</em> na mesa de encantamentos avançada permite torná-los inquebráveis, concedendo efeitos passivos permanentes como Força ou Visão Noturna.
+          </div>
+        </div>
+        <div class="card" style="--accent:var(--ice)">
+          <div class="card-icon">📖</div>
+          <div class="card-title">Tomos Extração (Tomes)</div>
+          <div class="card-body">
+            Permite criar livros especiais (como o <em>Tome of Extraction</em>) capazes de remover encantamentos específicos de um item sem destruí-lo no processo.
+          </div>
         </div>
       </div>
-      <div class="card" style="--accent:var(--void2)">
-        <div class="card-icon">🏰</div>
-        <div class="card-title">Explorer's Compass</div>
-        <div class="card-body">
-          Semelhante à bússola de biomas, ela localiza a coordenada exata de qualquer estrutura (masmorra, forte, cidade). Economiza horas de exploração.
+    </section>
+
+  </template>
+  <template id="page-hastur">
+    <section class="section" id="hastur">
+      <p class="section-label">Capítulo IX</p>
+      <h2 class="section-title">Era Hasturiana & Eldritch End</h2>
+
+      <p>A <strong>Era Hasturiana</strong> representa o conteúdo de <em>end game</em> definitivo do modpack. Ao explorar a dimensão do The End, você descobrirá que o bioma está corrompido pela influência de Hastur, introduzindo perigos ambientais extremos e o confronto com o chefe supremo.</p>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">O Perigo da Corrupção (Eldritch Corruption)</h3>
+      <p>Ao entrar nos biomas corrompidos do End, um debuff ambiental drena continuamente seus atributos físicos e mágicos. Para sobreviver e combater essa influência, você precisará forjar equipamentos de proteção especial:</p>
+
+      <div class="card-grid">
+        <div class="card" style="--accent:var(--void2)">
+          <div class="card-icon">💀</div>
+          <div class="card-title">Minério de Etyrite</div>
+          <div class="card-body">
+            Um minério extremamente raro encontrado apenas nas profundezas das ilhas do End corrompido. É a base para a criação dos equipamentos mais fortes de proteção.
+          </div>
+        </div>
+        <div class="card" style="--accent:var(--gold)">
+          <div class="card-icon">🛡️</div>
+          <div class="card-title">Sistema de Infusão</div>
+          <div class="card-body">
+            Encontre <em>Smithing Templates</em> nas End Cities e use a mesa de ferraria para infundir suas armaduras com <strong>Etyrite</strong>. Cada peça equipada concede <strong>+5 de resistência à corrupção</strong>.
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="tip"><strong>💡 Dica do Explorador:</strong> Sempre carregue o <em>Nature's Compass</em> e o <em>Explorer's Compass</em> no seu inventário para otimizar suas viagens e missões.</div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ── 2. SOBREVIVÊNCIA ── -->
-  <section class="section" id="sobrevivencia">
-    <p class="section-label">Capítulo II</p>
-    <h2 class="section-title">Sobrevivência e Recursos</h2>
-
-    <p>O Prominence II mantém as receitas básicas do vanilla, mas adiciona algumas mecânicas e ferramentas que mudam completamente como você joga nos primeiros dias.</p>
-
-    <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Itens Essenciais do Início</h3>
-
-    <div class="tbl-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Para que serve</th>
-            <th>Como obter</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Saco de Dormir</strong> 🛏️</td>
-            <td>Pula a noite sem resetar seu ponto de respawn — ótimo para exploração longa.</td>
-            <td>3 Lãs</td>
-          </tr>
-          <tr>
-            <td><strong>Martelo (Hammer)</strong> 🔨</td>
-            <td>Minera em área 3×3. Economiza tempo absurdo.</td>
-            <td>3 Lingotes de Ferro ou Pedra (receita padrão)</td>
-          </tr>
-          <tr>
-            <td><strong>Armadura de Aço</strong> ⚔️</td>
-            <td>Superior ao ferro — e você pode conseguir <em>de graça</em> logo no início.</td>
-            <td>Quest Book → Realms → Overworld → missão <em>"Space Station Mission"</em> → marque o check e receba blocos de aço!</td>
-          </tr>
-          <tr>
-            <td><strong>Planador (Glider)</strong> 🪂</td>
-            <td>Planar de pontos altos. Essencial para explorar biomas grandes.</td>
-            <td>Crafting com asa esquerda + asa direita</td>
-          </tr>
-          <tr>
-            <td><strong>Traveler's Backpack</strong> 🎒</td>
-            <td>Mochila melhorável equipada nas costas. Indispensável para exploração.</td>
-            <td>Crafting (pesquise no REI pressionando <kbd>R</kbd> sobre o item)</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="tip"><strong>💡 Dica de Ouro:</strong> O sistema de corte de árvores usa "chops" (golpes). Árvores pequenas levam ~5 golpes; árvores enormes podem exigir 20+. Não fique parado esperando — continue atacando!</div>
-
-    <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Armazenamento</h3>
-    <p>Baús podem ser evoluídos: <strong>Madeira → Cobre → Ferro → Ouro → Diamante</strong>. Você não precisa quebrar o baú — basta usar um "Chest Upgrade". Baús de Diamante oferecem espaço enorme.</p>
-
-    <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Locomoção Rápida</h3>
-    <p><strong>Waystones</strong> são obeliscos encontrados em vilas que permitem teletransporte rápido entre pontos ativados. O custo é XP de encantamento, então mantenha seus níveis. Se estiver sem XP e precisar fugir, crie uma <em>Grindstone</em> no campo e desencante armas de inimigos para recuperar XP rapidinho.</p>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ── 3. TALENTOS ── -->
-  <section class="section" id="talentos">
-    <p class="section-label">Capítulo III</p>
-    <h2 class="section-title">Sistema de Talentos</h2>
-
-    <p>Pressione <kbd>N</kbd> para abrir a Árvore de Talentos. Este sistema é independente dos encantamentos tradicionais — é aqui que sua classe ganha identidade.</p>
-
-    <div class="tip"><strong>📌 Pontos de Talento:</strong> Você ganha o primeiro ponto no nível 3 e depois a cada dois níveis (5, 7, 9...). Planeje bem — cada ponto conta!</div>
-
-    <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Atributos Principais</h3>
-
-    <div class="tbl-wrap">
-      <table>
-        <thead>
-          <tr><th>Atributo</th><th>O que faz</th><th>Melhor para</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Haste</strong></td><td>Aumenta velocidade de ataque e troca de armas</td><td><span class="badge">Rogue</span></td></tr>
-          <tr><td><strong>Health</strong></td><td>Total de pontos de vida</td><td><span class="badge">Protector</span></td></tr>
-          <tr><td><strong>Stamina</strong></td><td>Reduz perda de fome passiva</td><td><span class="badge">Todos</span></td></tr>
-          <tr><td><strong>Luck</strong></td><td>Qualidade de saques em baús e chance de reforja melhor</td><td><span class="badge">Exploradores</span></td></tr>
-          <tr><td><strong>Lethality / Magic Pen</strong></td><td>Ignora % da armadura ou proteção mágica do inimigo</td><td><span class="badge">Warrior</span><span class="badge purple">Mage</span></td></tr>
-          <tr><td><strong>Spell Crit / Haste</strong></td><td>Aumenta crítico e velocidade de conjuração</td><td><span class="badge purple">Mage</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Resetando Talentos</h3>
-    <p>Mudou de ideia? Você pode criar um <strong>Knowledge Scroll</strong> para resetar todos os pontos:</p>
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;margin-top:.75rem;font-size:.95rem;">
-      📜 Receita: <strong>4 Gravetos + 1 Bolsa de Tinta + 1 Papel</strong><br>
-      <span style="color:var(--muted);font-size:.88rem;">Ou complete a missão de talentos no Quest Book para ganhar um gratuitamente.</span>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ── 4. CLASSES ── -->
-  <section class="section" id="classes">
-    <p class="section-label">Capítulo IV</p>
-    <h2 class="section-title">Classes e Arquétipos</h2>
-
-    <p>Não existe uma classe "errada" — cada uma tem seu estilo de jogo. Escolha de acordo com como você prefere jogar.</p>
-
-    <div class="class-grid">
-      <div class="class-card" style="--accent:var(--red)">
-        <div class="class-emoji">⚔️</div>
-        <div class="class-name">Warrior</div>
-        <div class="class-desc">Alto dano físico corpo a corpo. Mais fácil de aprender. Ótimo para iniciantes.</div>
-      </div>
-      <div class="class-card" style="--accent:#7a7870">
-        <div class="class-emoji">🛡️</div>
-        <div class="class-name">Protector</div>
-        <div class="class-desc">Tanque do grupo. Alta vida e armadura. Perfeito para multiplayer.</div>
-      </div>
-      <div class="class-card" style="--accent:var(--green)">
-        <div class="class-emoji">🏹</div>
-        <div class="class-name">Ranger</div>
-        <div class="class-desc">Dano à distância com arcos. Seguro contra chefes voadores. Recomendado para o Night Lich.</div>
-      </div>
-      <div class="class-card" style="--accent:var(--gold)">
-        <div class="class-emoji">🗡️</div>
-        <div class="class-name">Rogue</div>
-        <div class="class-desc">Ataques ultra-rápidos em dual wielding. Bônus de 20%+ de velocidade de movimento.</div>
-      </div>
-      <div class="class-card" style="--accent:var(--void2)">
-        <div class="class-emoji">🔮</div>
-        <div class="class-name">Mage</div>
-        <div class="class-desc">Arcano, Fogo ou Gelo. Alta exigência de skill. Dano devastador com runas e cajados.</div>
-      </div>
-      <div class="class-card" style="--accent:var(--ice)">
-        <div class="class-emoji">💚</div>
-        <div class="class-name">Healer</div>
-        <div class="class-desc">Especialista em cura. Vital em servidores. Muito mais útil em grupo do que solo.</div>
-      </div>
-      <div class="class-card" style="--accent:#d4a0ff">
-        <div class="class-emoji">🎵</div>
-        <div class="class-name">Bard</div>
-        <div class="class-desc">Suporte que dá buffs de dano e velocidade para o grupo. Excelente em multiplayer.</div>
-      </div>
-    </div>
-
-    <div class="tip" style="margin-top:1.75rem"><strong>🎯 Recomendação para iniciantes:</strong> Comece como <strong>Warrior</strong> ou <strong>Ranger</strong>. São os mais intuitivos e funcionam bem mesmo sem dominar todos os sistemas.</div>
-
-    <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Habilidades Ativas com Spellbinding</h3>
-    <p>A <strong>Spellbinding Table</strong> (rodeada por estantes) permite criar livros de habilidade para sua classe. Coloque um livro normal + lapis-lazúli para criar manuais como o <em>Rogue Handbook</em> ou <em>Archery Manual</em>. Equipe o livro no slot de <strong>Trinkets</strong> para desbloquear habilidades ativas acionáveis por teclas.</p>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ── 5. EQUIPAMENTOS ── -->
-  <section class="section" id="equipamentos">
-    <p class="section-label">Capítulo V</p>
-    <h2 class="section-title">Reforja e Encantamentos</h2>
-
-    <p>Itens têm raridades que afetam muito seu desempenho. Da mais fraca à mais forte:</p>
-    <div style="margin:.75rem 0 1.25rem">
-      <span class="badge">Comum</span>
-      <span class="badge blue">Incomum</span>
-      <span class="badge blue">Raro</span>
-      <span class="badge purple">Épico</span>
-      <span class="badge" style="background:rgba(240,208,128,.1);border-color:rgba(240,208,128,.4);color:var(--gold2)">Lendário</span>
-      <span class="badge red">Mítico</span>
-    </div>
-
-    <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Como Reforjar na Bigorna</h3>
-    <p>Na <strong>Bigorna (Anvil)</strong>, acesse a aba <em>Reforge Gear</em>. Você precisa do item + material base + material de reforja. O item deve estar com durabilidade total.</p>
-
-    <div class="tbl-wrap">
-      <table>
-        <thead>
-          <tr><th>Material</th><th>Tier</th><th>Raridades possíveis</th><th>Onde encontrar</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Limestone Chunks</strong></td>
-            <td>1</td>
-            <td>Comum → Épico</td>
-            <td>Stonecutter com blocos de Limestone ou Diorite</td>
-          </tr>
-          <tr>
-            <td><strong>Pyrite</strong></td>
-            <td>2</td>
-            <td>Incomum → Lendário</td>
-            <td>Mineração no <strong>Nether</strong></td>
-          </tr>
-          <tr>
-            <td><strong>Galena Ore</strong></td>
-            <td>3</td>
-            <td>Raro → Mítico</td>
-            <td>Mineração no <strong>End</strong></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="warn"><strong>⚠️ Atenção:</strong> O Luck (Sorte) influencia diretamente o resultado da reforja. Se quiser itens melhores, invista pontos nesse atributo antes de reforjar.</div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ── 6. MASMORRAS ── -->
-  <section class="section" id="masmorras">
-    <p class="section-label">Capítulo VI</p>
-    <h2 class="section-title">Mine Cells — Masmorras</h2>
-
-    <p>As <strong>Mine Cells</strong> (Prisoner's Quarters) são as melhores fontes de recursos no início do jogo. Acesse pelos portais dimensionais no Overworld. Espere encontrar diamantes, esmeraldas, feitiços e armas únicas.</p>
-
-    <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Inimigos que Você Vai Encontrar</h3>
-
-    <div class="card-grid">
-      <div class="card" style="--accent:var(--red)">
-        <div class="card-icon">🧟</div>
-        <div class="card-title">Leaping Zombie</div>
-        <div class="card-body">Saltam em cima de você. Mantenha distância e acerte enquanto estão no ar.</div>
-      </div>
-      <div class="card" style="--accent:var(--ice)">
-        <div class="card-icon">🛡️</div>
-        <div class="card-title">Shield Bearer</div>
-        <div class="card-body">Bloqueiam na frente. Ataque pelas costas ou use habilidades que ignoram bloqueio.</div>
-      </div>
-      <div class="card" style="--accent:var(--gold)">
-        <div class="card-icon">💣</div>
-        <div class="card-title">Grenadier</div>
-        <div class="card-body">Lançam explosivos à distância. Fique em movimento e chegue perto rápido.</div>
-      </div>
-      <div class="card" style="--accent:var(--void2)">
-        <div class="card-icon">🦇</div>
-        <div class="card-title">Mutated Bat</div>
-        <div class="card-body">Voam de forma errática. Arcos ou magias funcionam melhor.</div>
-      </div>
-    </div>
-
-    <div class="tip" style="margin-top:1.5rem"><strong>⚗️ Health Flasks:</strong> Encontre frascos nas masmorras — eles restauram 10% da vida e dão Regeneração IV. Guarde-os para emergências!</div>
-    <div class="tip"><strong>🏃 Rogue na Masmorra:</strong> A classe Rogue tem bônus de 20%+ de velocidade de movimento, ideal para explorar as Mine Cells rapidamente e evitar armadilhas.</div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ── 7. CHEFE ── -->
-  <section class="section" id="chefe">
-    <p class="section-label">Capítulo VII</p>
-    <h2 class="section-title">Primeiro Chefe: Night Lich</h2>
-
-    <p>Ao atingir o nível 10, sua progressão será <strong>bloqueada</strong> até você derrotar o Night Lich. Este é o marco central do início do jogo.</p>
-
-    <div class="boss-block">
-      <div class="boss-name">☽ Night Lich</div>
-      <p>Um chefe voador e de ataque à distância que habita uma torre sombria. Recomendado ter pelo menos <strong>armadura de ferro ou aço</strong>, <strong>arco com flechas</strong> e alguns <strong>Health Flasks</strong> das Mine Cells.</p>
-
-      <h3 style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.08em;color:var(--void2);margin:1.5rem 0 .75rem;text-transform:uppercase;">Como Encontrar e Invocar</h3>
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:2rem 0 .75rem;text-transform:uppercase;">Ritual de Invocação do Chefe Final: The Faceless</h3>
+      <p>Para invocar o governante oculto dessa era, <strong>The Faceless</strong>, você deve preparar uma estrutura ritualística específica em uma área plana:</p>
 
       <ol class="steps">
         <li>
           <span class="step-num"></span>
           <div class="step-content">
-            <div class="step-title">Coletar 4 Soul Stars</div>
-            <p>Mate monstros mortos-vivos (zumbis e esqueletos). Cada um tem ~2-3% de chance de soltar uma <strong>Soul Star</strong>. Você precisa de 4.</p>
+            <div class="step-title">Posicione o Pedestal Eldritch</div>
+            <p>Coloque 1 <strong>Eldritch Pedestal</strong> no centro da sua área ritual.</p>
           </div>
         </li>
         <li>
           <span class="step-num"></span>
           <div class="step-content">
-            <div class="step-title">Localizar a Torre</div>
-            <p>Arremesse as Soul Stars (como se fossem Pérolas do Ender). Elas vão indicar a <strong>direção da Lich Tower</strong>. Siga até encontrar a torre.</p>
+            <div class="step-title">Cercar com Pedestais Abissais</div>
+            <p>Posicione 4 <strong>Abysmal Pedestals</strong> ao redor do pedestal central (formando uma cruz ou círculo nos quatro pontos cardeais).</p>
           </div>
         </li>
         <li>
           <span class="step-num"></span>
           <div class="step-content">
-            <div class="step-title">Suba ao Topo</div>
-            <p>Escale a torre, evitando armadilhas e inimigos no caminho. Leve comida suficiente.</p>
+            <div class="step-title">Acender Velas Negras</div>
+            <p>Coloque e acenda <strong>velas negras</strong> (Black Candles) sobre cada um dos pedestais periféricos (os pedestais abissais).</p>
           </div>
         </li>
         <li>
           <span class="step-num"></span>
           <div class="step-content">
-            <div class="step-title">Invocar o Night Lich</div>
-            <p>No topo, coloque as <strong>4 Soul Stars nos quatro altares</strong>. O chefe será invocado imediatamente.</p>
-          </div>
-        </li>
-        <li>
-          <span class="step-num"></span>
-          <div class="step-content">
-            <div class="step-title">A Batalha</div>
-            <p>Ele voa e ataca à distância. <strong>Use arco ou magia</strong> — mesmo guerreiros devem ter um arco para este encontro. Fique em movimento, use os Health Flasks e seja persistente.</p>
+            <div class="step-title">Sacrificar o Coração</div>
+            <p>Coloque um <strong>Aberration Heart</strong> (Coração Aberrante) no pedestal central. O ritual se iniciará e o chefe final surgirá.</p>
           </div>
         </li>
       </ol>
 
-      <div class="tip" style="margin-top:1rem"><strong>🏆 Recompensa:</strong> Após a vitória, o limite de nível de talento é expandido para <strong>50</strong> e novos capítulos do Quest Book são desbloqueados. A jornada real começa aqui!</div>
-    </div>
-  </section>
+      <div class="warn">
+        <strong>⚠️ Preparação Extrema:</strong> The Faceless é o chefe mais difícil do modpack. Certifique-se de ter toda a sua armadura infundida com Etyrite, armas lendárias em estágio máximo de despertar e uma quantidade massiva de buffs de poção e regeneração.
+      </div>
+    </section>
 
-  <hr class="divider">
+  </template>
+  <template id="page-inicio">
+    <section class="section" id="inicio">
+      <p class="section-label">Capítulo I</p>
+      <h2 class="section-title">Primeiros Passos</h2>
 
-  <!-- ── 8. WIKIS & LINKS ── -->
-  <section class="section" id="wikis">
-    <p class="section-label">Referências</p>
-    <h2 class="section-title">Wikis & Links Úteis</h2>
+      <p>Ao entrar no mundo pela primeira vez, o pack pode parecer avassalador. Respira fundo — a progressão é guiada pelo <strong>Quest Book</strong> (Livro de Missões). Abra-o, leia o capítulo <em>Void's Invasion</em> e marque o "check" de entendimento para desbloquear os próximos capítulos.</p>
 
-    <p>Para ir além deste guia, confira as documentações oficiais e recursos da comunidade. Cada link leva direto ao conteúdo relevante.</p>
+      <div class="tip"><strong>📖 Quest Book é seu GPS.</strong> Não ignore as missões — elas ensinam mecânicas E dão recompensas valiosas.</div>
 
-    <h3 class="link-group-title">🏰 Prominence II — Oficial & Comunidade</h3>
-    <div class="link-grid">
-      <a class="link-card" href="https://rpg.prominence.wiki/hasturian-era" target="_blank" rel="noopener">
-        <span class="link-icon">📖</span>
-        <span class="link-info">
-          <span class="link-name">Wiki Oficial — Hasturian Era</span>
-          <span class="link-desc">Missões, lore, mecânicas e estatísticas oficiais dos desenvolvedores (Cinderstone Studios).</span>
-        </span>
-        <span class="link-arrow">↗</span>
-      </a>
-      <a class="link-card" href="https://jangro.com/2023/10/04/prominence-ii-2-fabric-minecraft-1-20-1-getting-started" target="_blank" rel="noopener">
-        <span class="link-icon">🚀</span>
-        <span class="link-info">
-          <span class="link-name">Guia de Introdução (Jangro)</span>
-          <span class="link-desc">Guia textual detalhado com os primeiros passos para quem vem do Vanilla.</span>
-        </span>
-        <span class="link-arrow">↗</span>
-      </a>
-      <a class="link-card" href="https://www.reddit.com/r/feedthebeast/comments/1f3431u/prominence_ii_tips_and_advice/" target="_blank" rel="noopener">
-        <span class="link-icon">💬</span>
-        <span class="link-info">
-          <span class="link-name">Dicas da Comunidade (Reddit)</span>
-          <span class="link-desc">Threads com dicas práticas de progressão, armazenamento e sobrevivência.</span>
-        </span>
-        <span class="link-arrow">↗</span>
-      </a>
-    </div>
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Ajustes Recomendados Logo de Início</h3>
 
-    <h3 class="link-group-title">⚗️ Encantamentos & Magia</h3>
-    <div class="link-grid">
-      <a class="link-card" href="https://allthemods.github.io/alltheguides/atm9/apotheosis/" target="_blank" rel="noopener">
-        <span class="link-icon">✨</span>
-        <span class="link-info">
-          <span class="link-name">Apotheosis / Zenith — Guia Completo</span>
-          <span class="link-desc">Sistema de encantamentos até nível 100, forja de estantes (Seashelf → Draconic) e infusões.</span>
-        </span>
-        <span class="link-arrow">↗</span>
-      </a>
-      <a class="link-card" href="https://github.com/ZsoltMolnarrr/BetterCombat" target="_blank" rel="noopener">
-        <span class="link-icon">⚔️</span>
-        <span class="link-info">
-          <span class="link-name">Better Combat — Repositório Oficial</span>
-          <span class="link-desc">Como funciona o novo sistema de colisão 3D, animações e combate em área.</span>
-        </span>
-        <span class="link-arrow">↗</span>
-      </a>
-    </div>
+      <div class="card-grid">
+        <div class="card" style="--accent:var(--gold)">
+          <div class="card-icon">🎨</div>
+          <div class="card-title">Texturas Ashen</div>
+          <div class="card-body">O pack vem com o <em>Ashen Texture Pack</em> que muda a aparência dos itens. Para o visual clássico do Minecraft, vá em <strong>Resource Packs</strong> e desative tudo que tiver "Ashen" no nome.</div>
+        </div>
+        <div class="card" style="--accent:var(--ice)">
+          <div class="card-icon">🗺️</div>
+          <div class="card-title">Proteger seu Território</div>
+          <div class="card-body">Pressione <kbd>M</kbd> para abrir o mapa. Clique com o botão direito, arraste para selecionar sua área e clique em <strong>"Claim Selected"</strong>. Isso impede Creepers e outros jogadores de mexerem nas suas coisas.</div>
+        </div>
+        <div class="card" style="--accent:var(--void2)">
+          <div class="card-icon">👥</div>
+          <div class="card-title">Jogar em Grupo</div>
+          <div class="card-body">
+            Para criar um grupo e habilitar PvP amigável:<br>
+            <code style="font-size:.8rem;color:var(--ice)">/openpac-parties create</code><br>
+            <code style="font-size:.8rem;color:var(--ice)">/openpac-parties member invite Nome</code><br>
+            <code style="font-size:.8rem;color:var(--ice)">/openpac-pvp</code> (ambos precisam ativar)
+          </div>
+        </div>
+      </div>
 
-    <h3 class="link-group-title">🏭 Tecnologia & Automação</h3>
-    <div class="link-grid">
-      <a class="link-card" href="https://guide.appliedenergistics.org/" target="_blank" rel="noopener">
-        <span class="link-icon">💾</span>
-        <span class="link-info">
-          <span class="link-name">Applied Energistics 2 — Guia Oficial</span>
-          <span class="link-desc">Redes ME, canais lógicos, armazenamento digital e auto-crafting avançado.</span>
-        </span>
-        <span class="link-arrow">↗</span>
-      </a>
-      <a class="link-card" href="https://allthemods.github.io/alltheguides/atm9/powah/" target="_blank" rel="noopener">
-        <span class="link-icon">⚡</span>
-        <span class="link-info">
-          <span class="link-name">Powah! — Guia de Energia</span>
-          <span class="link-desc">Reatores do Básico ao Nitro (50.000 RF/t), Uraninita e controle automático de carga.</span>
-        </span>
-        <span class="link-arrow">↗</span>
-      </a>
-      <a class="link-card" href="https://create.fandom.com/wiki/Getting_started" target="_blank" rel="noopener">
-        <span class="link-icon">⚙️</span>
-        <span class="link-info">
-          <span class="link-name">Create Mod — Wiki de Início</span>
-          <span class="link-desc">Engrenagens, força cinética, Crushing Wheels, caldeiras a vapor e fábricas mecânicas.</span>
-        </span>
-        <span class="link-arrow">↗</span>
-      </a>
-    </div>
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Progressão de Níveis — Visão Geral</h3>
 
-    <h3 class="link-group-title">🌌 Dimensões & Exploração</h3>
-    <div class="link-grid">
-      <a class="link-card" href="https://www.curseforge.com/minecraft/mc-mods/minecells" target="_blank" rel="noopener">
-        <span class="link-icon">🗝️</span>
-        <span class="link-info">
-          <span class="link-name">Mine Cells — Dead Cells Mod</span>
-          <span class="link-desc">Masmorras roguelike, chefes Concierge e Conjunctivius, Spawner Runes e espólios.</span>
-        </span>
-        <span class="link-arrow">↗</span>
-      </a>
-      <a class="link-card" href="https://www.curseforge.com/minecraft/mc-mods/endremastered" target="_blank" rel="noopener">
-        <span class="link-icon">👁️</span>
-        <span class="link-info">
-          <span class="link-name">End Remastered — Os 12 Olhos</span>
-          <span class="link-desc">Localização exata dos 16 olhos customizados e como reativar o portal do End.</span>
-        </span>
-        <span class="link-arrow">↗</span>
-      </a>
-      <a class="link-card" href="https://ad-astra-mod.fandom.com/wiki/Ad_Astra_Mod_Wiki" target="_blank" rel="noopener">
-        <span class="link-icon">🚀</span>
-        <span class="link-info">
-          <span class="link-name">Ad Astra — Wiki de Exploração Espacial</span>
-          <span class="link-desc">Os 4 tiers de foguetes: Lua, Marte, Vênus/Mercúrio e Glacio (Proxima Centauri).</span>
-        </span>
-        <span class="link-arrow">↗</span>
-      </a>
-      <a class="link-card" href="https://rpg.prominence.wiki/mod/eldritch-end" target="_blank" rel="noopener">
-        <span class="link-icon">🌀</span>
-        <span class="link-info">
-          <span class="link-name">Eldritch End — Era Hasturiana</span>
-          <span class="link-desc">Sistema de Corrupção, ritual de invocação de The Faceless e infusão com Etyrite.</span>
-        </span>
-        <span class="link-arrow">↗</span>
-      </a>
-    </div>
-  </section>
+      <div class="prog-bar">
+        <div class="prog-row">
+          <span class="prog-label">Níveis 1 – 10</span>
+          <div class="prog-track"><div class="prog-fill" style="--w:.15"></div></div>
+          <span class="prog-val">Disponível</span>
+        </div>
+        <div class="prog-row">
+          <span class="prog-label">Níveis 11 – 50</span>
+          <div class="prog-track"><div class="prog-fill" style="--w:.62"></div></div>
+          <span class="prog-val">Após Night Lich</span>
+        </div>
+        <div class="prog-row">
+          <span class="prog-label">Níveis 51 – 65</span>
+          <div class="prog-track"><div class="prog-fill" style="--w:1"></div></div>
+          <span class="prog-val">Era Hasturiana</span>
+        </div>
+      </div>
+    </section>
 
-</main>
+  </template>
+  <template id="page-masmorras">
+    <section class="section" id="masmorras">
+      <p class="section-label">Capítulo VI</p>
+      <h2 class="section-title">Mine Cells — Masmorras & Progressão</h2>
+
+      <p>As <strong>Mine Cells</strong> (inspiradas no jogo <em>Dead Cells</em>) são excelentes fontes de recursos no início e meio do jogo. Acessadas através de portais dimensionais no Overworld, elas contêm uma progressão interna de masmorras com inimigos perigosos, itens exclusivos e chefes desafiadores.</p>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Inimigos que Você Vai Encontrar</h3>
+      <div class="card-grid">
+        <div class="card" style="--accent:var(--red)">
+          <div class="card-icon">🧟</div>
+          <div class="card-title">Leaping Zombie</div>
+          <div class="card-body">Saltam em cima de você. Mantenha distância e acerte enquanto estão no ar.</div>
+        </div>
+        <div class="card" style="--accent:var(--ice)">
+          <div class="card-icon">🛡️</div>
+          <div class="card-title">Shield Bearer</div>
+          <div class="card-body">Bloqueiam na frente. Ataque pelas costas ou use habilidades que ignoram bloqueio.</div>
+        </div>
+        <div class="card" style="--accent:var(--gold)">
+          <div class="card-icon">💣</div>
+          <div class="card-title">Grenadier</div>
+          <div class="card-body">Lançam explosivos à distância. Fique em movimento e chegue perto rápido.</div>
+        </div>
+        <div class="card" style="--accent:var(--void2)">
+          <div class="card-icon">🦇</div>
+          <div class="card-title">Mutated Bat</div>
+          <div class="card-body">Voam de forma errática. Arcos ou magias funcionam melhor.</div>
+        </div>
+      </div>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:2rem 0 .75rem;text-transform:uppercase;">Progressão de Áreas (Ordem de Dificuldade)</h3>
+      <p>As masmorras possuem uma ordem de avanço e dificuldade crescente. Use os portais de transição no final de cada área para progredir:</p>
+      
+      <ol class="steps">
+        <li>
+          <span class="step-num"></span>
+          <div class="step-content">
+            <div class="step-title">Prisoner's Quarters (Área de Entrada)</div>
+            <p>A masmorra inicial. Inimigos básicos e bom para coletar os primeiros recursos (diamantes, esmeraldas e equipamentos comuns/incomuns).</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num"></span>
+          <div class="step-content">
+            <div class="step-title">Promenade of the Damned</div>
+            <p>Uma área aberta na superfície. Inimigos mais perigosos aparecem aqui em bandos. Cuidado com armadilhas de espinhos no solo.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num"></span>
+          <div class="step-content">
+            <div class="step-title">Ramparts (Muralhas)</div>
+            <p>Os telhados e passarelas elevadas da prisão. Há muitos inimigos com ataques à distância e o perigo constante de queda fatal.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num"></span>
+          <div class="step-content">
+            <div class="step-title">Black Bridge (Ponte Negra)</div>
+            <p>A arena final e linear que conecta a prisão, servindo de palco para o confronto com os chefes da masmorra.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:2rem 0 .75rem;text-transform:uppercase;">Itens e Armas Exclusivas</h3>
+      <div class="card-grid">
+        <div class="card" style="--accent:var(--green)">
+          <div class="card-icon">🌿</div>
+          <div class="card-title">Vine Rune (Runa de Vinha)</div>
+          <div class="card-body">Item utilitário indispensável. Permite escalar e atravessar obstáculos de vegetação específicos dentro da masmorra para acessar salas secretas.</div>
+        </div>
+        <div class="card" style="--accent:var(--gold)">
+          <div class="card-icon">🛠️</div>
+          <div class="card-title">Unbreakable Cell Crafter</div>
+          <div class="card-body">Uma bancada especial usada para fabricar as armas exclusivas desse mod. Alimente-a com <em>Monster Cells</em> coletadas nas masmorras.</div>
+        </div>
+        <div class="card" style="--accent:var(--ice)">
+          <div class="card-icon">⚡</div>
+          <div class="card-title">Armas Especiais</div>
+          <div class="card-body">Equipamentos únicos como o <strong>Electric Whip</strong> (Chicote Elétrico) e espadas rápidas só podem ser fabricados ou encontrados dentro das Mine Cells.</div>
+        </div>
+      </div>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:2rem 0 .75rem;text-transform:uppercase;">Chefes das Mine Cells</h3>
+      <p>Você pode invocar os chefes internos ativando as <strong>Spawner Runes</strong> encontradas em salas específicas ou no final da Black Bridge:</p>
+
+      <div class="boss-block">
+        <div class="boss-name">🛡️ Concierge</div>
+        <p>Um chefe baseado em força bruta e ondas de choque. Seus padrões são lentos e previsíveis: pule suas ondas de fogo terrestres, mantenha distância quando ele ativar a barreira de espinhos vermelha e ataque logo após ele finalizar seus saltos.</p>
+      </div>
+
+      <div class="boss-block" style="border-color: var(--void2);">
+        <div class="boss-name" style="color: var(--void2);">👁️ Conjunctivius</div>
+        <p>Um molusco gigante flutuante com múltiplos tentáculos. O ponto fraco é o seu grande olho central. Foque em esquivar das investidas dos tentáculos que saem do chão e use ataques à distância ou magias no olho quando ele estiver vulnerável.</p>
+      </div>
+
+      <div class="tip"><strong>⚗️ Lembrete:</strong> Use os <strong>Health Flasks</strong> encontrados nas masmorras. Eles restauram 10% da sua vida instantaneamente e aplicam Regeneração IV, o que ajuda muito nos confrontos contra os chefes das Mine Cells.</div>
+    </section>
+
+  </template>
+  <template id="page-qol">
+    <section class="section" id="qol">
+      <p class="section-label">Capítulo I.V</p>
+      <h2 class="section-title">Ferramentas de Interface (QoL)</h2>
+
+      <p>Para facilitar a sua jornada no Prominence II, existem algumas ferramentas essenciais que ajudam na navegação e na consulta de receitas. Elas substituem completamente as mecânicas tradicionais do Minecraft vanilla.</p>
+
+      <div class="card-grid">
+        <div class="card" style="--accent:var(--gold)">
+          <div class="card-icon">🔍</div>
+          <div class="card-title">REI (Roughly Enough Items)</div>
+          <div class="card-body">
+            Pressione <kbd>R</kbd> sobre qualquer item para ver sua receita de fabricação ou <kbd>U</kbd> para ver todos os seus usos. Substitui completamente o livro de receitas vanilla.
+          </div>
+        </div>
+        <div class="card" style="--accent:var(--ice)">
+          <div class="card-icon">🗺️</div>
+          <div class="card-title">Xaero's Minimap</div>
+          <div class="card-body">
+            Mostra um mini mapa no canto da tela com inimigos, jogadores e estruturas próximas. Configurável e expansível pressionando a tecla <kbd>Y</kbd>.
+          </div>
+        </div>
+        <div class="card" style="--accent:var(--green)">
+          <div class="card-icon">🧭</div>
+          <div class="card-title">Nature's Compass</div>
+          <div class="card-body">
+            Uma bússola especial que permite buscar e apontar para qualquer bioma existente no mundo, poupando horas de exploração cega.
+          </div>
+        </div>
+        <div class="card" style="--accent:var(--void2)">
+          <div class="card-icon">🏰</div>
+          <div class="card-title">Explorer's Compass</div>
+          <div class="card-body">
+            Semelhante à bússola de biomas, ela localiza a coordenada exata de qualquer estrutura (masmorra, forte, cidade). Economiza horas de exploração.
+          </div>
+        </div>
+      </div>
+
+      <div class="tip"><strong>💡 Dica do Explorador:</strong> Sempre carregue o <em>Nature's Compass</em> e o <em>Explorer's Compass</em> no seu inventário para otimizar suas viagens e missões.</div>
+    </section>
+
+  </template>
+  <template id="page-sobrevivencia">
+    <section class="section" id="sobrevivencia">
+      <p class="section-label">Capítulo II</p>
+      <h2 class="section-title">Sobrevivência e Recursos</h2>
+
+      <p>O Prominence II mantém as receitas básicas do vanilla, mas adiciona algumas mecânicas e ferramentas que mudam completamente como você joga nos primeiros dias.</p>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Itens Essenciais do Início</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Para que serve</th>
+              <th>Como obter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Saco de Dormir</strong> 🛏️</td>
+              <td>Pula a noite sem resetar seu ponto de respawn — ótimo para exploração longa.</td>
+              <td>3 Lãs</td>
+            </tr>
+            <tr>
+              <td><strong>Martelo (Hammer)</strong> 🔨</td>
+              <td>Minera em área 3×3. Economiza tempo absurdo.</td>
+              <td>3 Lingotes de Ferro ou Pedra (receita padrão)</td>
+            </tr>
+            <tr>
+              <td><strong>Armadura de Aço</strong> ⚔️</td>
+              <td>Superior ao ferro — e você pode conseguir <em>de graça</em> logo no início.</td>
+              <td>Quest Book → Realms → Overworld → missão <em>"Space Station Mission"</em> → marque o check e receba blocos de aço!</td>
+            </tr>
+            <tr>
+              <td><strong>Planador (Glider)</strong> 🪂</td>
+              <td>Planar de pontos altos. Essencial para explorar biomas grandes.</td>
+              <td>Crafting com asa esquerda + asa direita</td>
+            </tr>
+            <tr>
+              <td><strong>Traveler's Backpack</strong> 🎒</td>
+              <td>Mochila melhorável equipada nas costas. Indispensável para exploração.</td>
+              <td>Crafting (pesquise no REI pressionando <kbd>R</kbd> sobre o item)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip"><strong>💡 Dica de Ouro:</strong> O sistema de corte de árvores usa "chops" (golpes). Árvores pequenas levam ~5 golpes; árvores enormes podem exigir 20+. Não fique parado esperando — continue atacando!</div>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Armazenamento</h3>
+      <p>Baús podem ser evoluídos: <strong>Madeira → Cobre → Ferro → Ouro → Diamante</strong>. Você não precisa quebrar o baú — basta usar um "Chest Upgrade". Baús de Diamante oferecem espaço enorme.</p>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Locomoção Rápida</h3>
+      <p><strong>Waystones</strong> são obeliscos encontrados em vilas que permitem teletransporte rápido entre pontos ativados. O custo é XP de encantamento, então mantenha seus níveis. Se estiver sem XP e precisar fugir, crie uma <em>Grindstone</em> no campo e desencante armas de inimigos para recuperar XP rapidinho.</p>
+    </section>
+
+  </template>
+  <template id="page-talentos">
+    <section class="section" id="talentos">
+      <p class="section-label">Capítulo III</p>
+      <h2 class="section-title">Sistema de Talentos</h2>
+
+      <p>Pressione <kbd>N</kbd> para abrir a Árvore de Talentos. Este sistema é independente dos encantamentos tradicionais — é aqui que sua classe ganha identidade.</p>
+
+      <div class="tip"><strong>📌 Pontos de Talento:</strong> Você ganha o primeiro ponto no nível 3 e depois a cada dois níveis (5, 7, 9...). Planeje bem — cada ponto conta!</div>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Atributos Principais</h3>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr><th>Atributo</th><th>O que faz</th><th>Melhor para</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Haste</strong></td><td>Aumenta velocidade de ataque e troca de armas</td><td><span class="badge">Rogue</span></td></tr>
+            <tr><td><strong>Health</strong></td><td>Total de pontos de vida</td><td><span class="badge">Protector</span></td></tr>
+            <tr><td><strong>Stamina</strong></td><td>Reduz perda de fome passiva</td><td><span class="badge">Todos</span></td></tr>
+            <tr><td><strong>Luck</strong></td><td>Qualidade de saques em baús e chance de reforja melhor</td><td><span class="badge">Exploradores</span></td></tr>
+            <tr><td><strong>Lethality / Magic Pen</strong></td><td>Ignora % da armadura ou proteção mágica do inimigo</td><td><span class="badge">Warrior</span><span class="badge purple">Mage</span></td></tr>
+            <tr><td><strong>Spell Crit / Haste</strong></td><td>Aumenta crítico e velocidade de conjuração</td><td><span class="badge purple">Mage</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.08em;color:var(--gold2);margin:1.75rem 0 .75rem;text-transform:uppercase;">Resetando Talentos</h3>
+      <p>Mudou de ideia? Você pode criar um <strong>Knowledge Scroll</strong> para resetar todos os pontos:</p>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;margin-top:.75rem;font-size:.95rem;">
+        📜 Receita: <strong>4 Gravetos + 1 Bolsa de Tinta + 1 Papel</strong><br>
+        <span style="color:var(--muted);font-size:.88rem;">Ou complete a missão de talentos no Quest Book para ganhar um gratuitamente.</span>
+      </div>
+    </section>
+
+  </template>
+  <template id="page-wikis">
+    <section class="section" id="wikis">
+      <p class="section-label">Referências</p>
+      <h2 class="section-title">Wikis & Links Úteis</h2>
+
+      <p>Para ir além deste guia, confira as documentações oficiais e recursos da comunidade. Cada link leva direto ao conteúdo relevante.</p>
+
+      <h3 class="link-group-title">🏰 Prominence II — Oficial & Comunidade</h3>
+      <div class="link-grid">
+        <a class="link-card" href="https://rpg.prominence.wiki/hasturian-era" target="_blank" rel="noopener">
+          <span class="link-icon">📖</span>
+          <span class="link-info">
+            <span class="link-name">Wiki Oficial — Hasturian Era</span>
+            <span class="link-desc">Missões, lore, mecânicas e estatísticas oficiais dos desenvolvedores (Cinderstone Studios).</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a class="link-card" href="https://jangro.com/2023/10/04/prominence-ii-2-fabric-minecraft-1-20-1-getting-started" target="_blank" rel="noopener">
+          <span class="link-icon">🚀</span>
+          <span class="link-info">
+            <span class="link-name">Guia de Introdução (Jangro)</span>
+            <span class="link-desc">Guia textual detalhado com os primeiros passos para quem vem do Vanilla.</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a class="link-card" href="https://www.reddit.com/r/feedthebeast/comments/1f3431u/prominence_ii_tips_and_advice/" target="_blank" rel="noopener">
+          <span class="link-icon">💬</span>
+          <span class="link-info">
+            <span class="link-name">Dicas da Comunidade (Reddit)</span>
+            <span class="link-desc">Threads com dicas práticas de progressão, armazenamento e sobrevivência.</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+      </div>
+
+      <h3 class="link-group-title">⚗️ Encantamentos & Magia</h3>
+      <div class="link-grid">
+        <a class="link-card" href="https://allthemods.github.io/alltheguides/atm9/apotheosis/" target="_blank" rel="noopener">
+          <span class="link-icon">✨</span>
+          <span class="link-info">
+            <span class="link-name">Apotheosis / Zenith — Guia Completo</span>
+            <span class="link-desc">Sistema de encantamentos até nível 100, forja de estantes (Seashelf → Draconic) e infusões.</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a class="link-card" href="https://github.com/ZsoltMolnarrr/BetterCombat" target="_blank" rel="noopener">
+          <span class="link-icon">⚔️</span>
+          <span class="link-info">
+            <span class="link-name">Better Combat — Repositório Oficial</span>
+            <span class="link-desc">Como funciona o novo sistema de colisão 3D, animações e combate em área.</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+      </div>
+
+      <h3 class="link-group-title">🏭 Tecnologia & Automação</h3>
+      <div class="link-grid">
+        <a class="link-card" href="https://guide.appliedenergistics.org/" target="_blank" rel="noopener">
+          <span class="link-icon">💾</span>
+          <span class="link-info">
+            <span class="link-name">Applied Energistics 2 — Guia Oficial</span>
+            <span class="link-desc">Redes ME, canais lógicos, armazenamento digital e auto-crafting avançado.</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a class="link-card" href="https://allthemods.github.io/alltheguides/atm9/powah/" target="_blank" rel="noopener">
+          <span class="link-icon">⚡</span>
+          <span class="link-info">
+            <span class="link-name">Powah! — Guia de Energia</span>
+            <span class="link-desc">Reatores do Básico ao Nitro (50.000 RF/t), Uraninita e controle automático de carga.</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a class="link-card" href="https://create.fandom.com/wiki/Getting_started" target="_blank" rel="noopener">
+          <span class="link-icon">⚙️</span>
+          <span class="link-info">
+            <span class="link-name">Create Mod — Wiki de Início</span>
+            <span class="link-desc">Engrenagens, força cinética, Crushing Wheels, caldeiras a vapor e fábricas mecânicas.</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+      </div>
+
+      <h3 class="link-group-title">🌌 Dimensões & Exploração</h3>
+      <div class="link-grid">
+        <a class="link-card" href="https://www.curseforge.com/minecraft/mc-mods/minecells" target="_blank" rel="noopener">
+          <span class="link-icon">🗝️</span>
+          <span class="link-info">
+            <span class="link-name">Mine Cells — Dead Cells Mod</span>
+            <span class="link-desc">Masmorras roguelike, chefes Concierge e Conjunctivius, Spawner Runes e espólios.</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a class="link-card" href="https://www.curseforge.com/minecraft/mc-mods/endremastered" target="_blank" rel="noopener">
+          <span class="link-icon">👁️</span>
+          <span class="link-info">
+            <span class="link-name">End Remastered — Os 12 Olhos</span>
+            <span class="link-desc">Localização exata dos 16 olhos customizados e como reativar o portal do End.</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a class="link-card" href="https://ad-astra-mod.fandom.com/wiki/Ad_Astra_Mod_Wiki" target="_blank" rel="noopener">
+          <span class="link-icon">🚀</span>
+          <span class="link-info">
+            <span class="link-name">Ad Astra — Wiki de Exploração Espacial</span>
+            <span class="link-desc">Os 4 tiers de foguetes: Lua, Marte, Vênus/Mercúrio e Glacio (Proxima Centauri).</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a class="link-card" href="https://rpg.prominence.wiki/mod/eldritch-end" target="_blank" rel="noopener">
+          <span class="link-icon">🌀</span>
+          <span class="link-info">
+            <span class="link-name">Eldritch End — Era Hasturiana</span>
+            <span class="link-desc">Sistema de Corrupção, ritual de invocação de The Faceless e infusão com Etyrite.</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+  </template>
 
 <footer>
   <p>Prominence II: Hasturian Era — Guia para Iniciantes</p>
